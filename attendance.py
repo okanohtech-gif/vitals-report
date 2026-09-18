@@ -35,7 +35,6 @@ class PersonSummary:
 
     def add(self, result: DailyResult) -> None:
         """自分の数字を1件ぶん積み上げる（自分のデータを変えるので、クラスに持たせる）"""
-        # ここは自分で書く
         if result.minutes is None:
             self.missing += 1
             self.missing_days.append(result.day)
@@ -92,7 +91,6 @@ def format_hours(minutes: int) -> str:
 
 def format_line(person: PersonSummary) -> str:
     """表示は PersonSummary の責務ではないので、関数に渡す"""
-    # ここは自分で書く（段階1の format_line を person.minutes などに置き換える）
     result = f"{person.name}: {format_hours(person.minutes)} / 最長 {format_hours(person.longest)} / 残業 {format_hours(person.overtime)}"
 
     if person.missing > 0:
